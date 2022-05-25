@@ -88,5 +88,48 @@ JNIEXPORT void JNICALL Java_com_cogroid_atomspace_SchemeEval_jni_1init_1scheme
 ...
 ```
 
+##### Tester.java
+
+```
+...
+public void testSchemeEval() {
+	try {
+		String log = "\n===== SchemeEval =====\n";
+		writeLog(log);
+		try {
+			SchemeEval.init_scheme();
+		} catch (Throwable e) {
+			writeLog(Loader.me().stackTrace(e));
+		}
+		AtomSpace pv = new AtomSpace();
+		SchemeEval se = new SchemeEval(pv);
+		String tmpFolder = new java.io.File(_logFile).getParentFile().getAbsolutePath();
+		extractScmFiles();
+		java.util.List<String> files = scmFiles();
+		for (int i = 0; i < files.size(); i++) {
+			String fn = files.get(i);
+			String text = readTextFile(fn, tmpFolder);
+			try {
+				writeLog("----- Eval: " + fn + " -----");
+				String rs = "";
+				se.begin_eval();
+				writeLog("begin_eval();");
+				se.eval_expr(text);
+				writeLog("eval_expr();");
+				rs = se.poll_result();
+				writeLog("poll_result();");
+				//String rs = se.eval(text);
+				writeLog(rs);
+			} catch (Throwable e) {
+				writeLog(Loader.me().stackTrace(e));
+			}
+		}
+	} catch (Throwable e) {
+		writeLog(Loader.me().stackTrace(e));
+	}
+    }
+...
+```
+
 ---
 [Head icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/head)
