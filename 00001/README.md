@@ -14,7 +14,7 @@ SchemeEval run smoothly on x64 and i386 but it crashes on armv7-a.
 
 4. Run dAtomSpace Tester
 
-5. App run about 1 minute, then it crashes
+5. App runs about 30 seconds, then it crashes
 
 6. View results in datomspace-test.txt file in Download folder
 
