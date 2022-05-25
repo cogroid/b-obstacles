@@ -22,6 +22,7 @@ SchemeEval run smoothly on x64 and i386 but it crashes on armv7-a.
 
 [dAtomSpace Tester](https://github.com/cogroid/b-obstacles/releases/download/obstacle-00001/datomspace-tester.zip)
 
+[dAtomSpace](https://github.com/cogroid/d-atomspace)
 
 ##### SchemeEval.java
 
