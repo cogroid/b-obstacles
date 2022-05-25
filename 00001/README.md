@@ -14,7 +14,7 @@ SchemeEval run smoothly on x64 and i386 but it crashes on armv7-a.
 
 4. Run dAtomSpace Tester
 
-5. App runs about 30 seconds, then it crashes
+5. App runs about 30 seconds, then it crashes. There is [tombstone file](https://github.com/cogroid/b-obstacles/files/8771985/tombstone_04.txt).
 
 6. View results in datomspace-test.txt file in Download folder
 
@@ -48,6 +48,44 @@ public class SchemeEval extends GenericEval {
 	private static native void jni_init_scheme();
   
 ... 
+```
+
+##### com_cogroid_atomspace_SchemeEval.h
+
+```
+...
+JNIEXPORT jlong JNICALL Java_com_cogroid_atomspace_SchemeEval_jni_1init
+  (JNIEnv *, jobject, jlong);
+  
+...
+JNIEXPORT void JNICALL Java_com_cogroid_atomspace_SchemeEval_jni_1init_1scheme
+  (JNIEnv *, jclass);
+
+...
+```
+
+##### com_cogroid_atomspace_SchemeEval.cc
+
+```
+...
+JNIEXPORT jlong JNICALL Java_com_cogroid_atomspace_SchemeEval_jni_1init
+  (JNIEnv *env, jobject thisObj, jlong as_jni_ptr) {
+	opencog::AtomSpace *asp = NULL;
+	if (as_jni_ptr != 0) {
+		cogroid::SPW<opencog::AtomSpace> *spw_asp = cogroid::SPW<opencog::AtomSpace>::get(as_jni_ptr);
+		asp = spw_asp->get();
+	}
+	cogroid::SPW<opencog::SchemeEval> *spw_se = new cogroid::SPW<opencog::SchemeEval>(asp);
+	return spw_se->instance();
+}
+
+...
+JNIEXPORT void JNICALL Java_com_cogroid_atomspace_SchemeEval_jni_1init_1scheme
+  (JNIEnv *env, jclass clz) {
+	opencog::SchemeEval::init_scheme();
+}
+
+...
 ```
 
 ---
