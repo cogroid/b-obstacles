@@ -22,5 +22,33 @@ SchemeEval run smoothly on x64 and i386 but it crashes on armv7-a.
 
 [dAtomSpace Tester](https://github.com/cogroid/b-obstacles/releases/download/obstacle-00001/datomspace-tester.zip)
 
+
+##### SchemeEval.java
+
+```
+...
+
+package com.cogroid.atomspace;
+
+public class SchemeEval extends GenericEval {
+...
+
+	public SchemeEval(AtomSpace as) {
+		super();
+		jni_ptr = jni_init(as.jni_ptr);
+	}
+
+	private native long jni_init(long as_jni_ptr);
+
+	// Call before first use.
+	public static void init_scheme() {
+		jni_init_scheme();
+	}
+
+	private static native void jni_init_scheme();
+  
+... 
+```
+
 ---
 [Head icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/head)
