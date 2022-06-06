@@ -1,0 +1,1 @@
+scm_with_guile #1scm_i_with_guile #1scm_i_with_guile #2with_guile #1with_guile #2scm_i_init_thread_for_guile #1scm_i_init_thread_for_guile #2scm_i_init_thread_for_guile #3bscm_i_init_thread_for_guile #4bscm_i_init_thread_for_guile #5ba

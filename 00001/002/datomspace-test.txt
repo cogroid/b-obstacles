@@ -1,0 +1,187 @@
+
+INFO: Readonly settings: {}
+
+INFO: Writable settings: {}
+
+INFO: ===== /AtomSpace.js =====
+
+INFO: Readonly settings: {}
+
+INFO: Writable settings: {}
+
+INFO: isAtom: true
+
+INFO: isNode: false
+
+INFO: isLink: false
+
+INFO: isType: true
+
+INFO: getHash: 1
+
+INFO: toString(indent): indent(AtomSpace "(uuid . 1)")
+
+INFO: toShortString(indent): indent(AtomSpace "(uuid . 1)")
+
+INFO: disposed: true
+
+INFO: Result: null
+
+INFO: ===== /ConceptNode.js =====
+
+INFO: Readonly settings: {}
+
+INFO: Writable settings: {}
+
+INFO: isAtom: true
+
+INFO: isNode: true
+
+INFO: isLink: false
+
+INFO: getName: dream
+
+INFO: getArity: 1
+
+INFO: toString: (ConceptNode "dream") ; [2281a00710ad9][2]
+
+INFO: toShortString: (ConceptNode "dream")
+
+INFO: equals(true, dream): true
+
+INFO: equals(false, dream): false
+
+INFO: equals(false, atomspace): false
+
+INFO: disposed: true
+
+INFO: Result: null
+
+Running scheme2js: /data/user/0/com.cogroid.atomspace.tester/cache/736d6361270e4ce59641395c7576331b.scm , /data/user/0/com.cogroid.atomspace.tester/cache/e77a0eb4defd45878dcc9d1fad8ced8f.js
+
+INFO: ===== /ConceptNode.scm.js =====
+
+INFO: Readonly settings: {}
+
+INFO: Writable settings: {}
+
+INFO: (ConceptNode "dream") ; [2281a00710ad9][3]
+
+INFO: Result: null
+
+
+===== PseudoValue =====
+
+
+isAtom: true
+
+isNode: false
+
+isLink: false
+
+isType: true
+
+disposed: true
+
+
+===== AtomSpace =====
+
+
+isAtom: true
+
+isNode: false
+
+isLink: false
+
+isType: true
+
+getHash: 5
+
+toString(indent): indent(AtomSpace "(uuid . 5)")
+
+toShortString(indent): indent(AtomSpace "(uuid . 5)")
+
+disposed: true
+
+
+===== Node =====
+
+
+isAtom: true
+
+isNode: true
+
+isLink: false
+
+getName: dream
+
+getArity: 1
+
+toString: (ConceptNode "dream") ; [2281a00710ad9][6]
+
+toShortString: (ConceptNode "dream")
+
+disposed: true
+
+
+===== Concept Node =====
+
+
+isAtom: true
+
+isNode: true
+
+isLink: false
+
+getName: dream
+
+getArity: 1
+
+toString: (ConceptNode "dream") ; [2281a00710ad9][7]
+
+toShortString: (ConceptNode "dream")
+
+equals(true, dream): true
+
+equals(false, dream): false
+
+equals(false, atomspace): false
+
+disposed: true
+
+
+===== Link =====
+
+
+isAtom: true
+
+isNode: false
+
+isLink: true
+
+getName: 
+
+getArity: 2
+
+toString: (OrderedLink
+  (ConceptNode "dream") ; [2281a00710ad9][8]
+  (ConceptNode "american") ; [2281caf45528d][8]
+) ; [9bc81fc95c526de9][8]
+
+toShortString: (OrderedLink
+  (ConceptNode "dream")
+  (ConceptNode "american"))
+
+disposed: true
+
+
+===== SchemeEval =====
+
+duude enter init_scheme tid=15349
+duude enter SchemeEval() ctor tid=15349 this=0xc127e8f8 as=0x0
+duude enter init_only_once done=0
+duude init_only_once gonna make immortal me=15349
+duude init_only_once done make immortal me=15349
+duude enter immortal tid=15350
+redirect stdout & stderr to file ... done
+try to write to stdout ... done
